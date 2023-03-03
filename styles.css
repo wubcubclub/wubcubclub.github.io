@@ -39,7 +39,10 @@ main {
     -webkit-box-sizing: border-box;
     padding:1px 4px;
 }
-.day:not(.col1):not(.day1){
+.day.not-curr{
+    background: lightgray;
+}
+.day:not(.col1){
     border-left: none;
 }
 .day:not(.row-last){
