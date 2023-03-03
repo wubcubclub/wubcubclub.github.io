@@ -1,0 +1,104 @@
+body {
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+}
+header {
+    background-color: coral;
+}
+main {
+    background-color: cornflowerblue;
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.calendar-wrapper {
+    aspect-ratio: 4/3;
+    height:75%;
+    max-width: 95%;
+    margin:auto;
+}
+.calendar {
+    background-color:sienna;
+    height:100%;
+    width:100%;
+
+    display: grid;
+    grid: repeat(6,1fr)/ repeat(7,1fr);
+}
+
+.day {
+    height:100%;
+    width:100%;
+    background: white;
+    border: black solid 1px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding:1px 4px;
+}
+.day:not(.col1):not(.day1){
+    border-left: none;
+}
+.day:not(.row-last){
+    border-bottom: none;
+}
+.red-crosshatch{
+    background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    red 10px,
+    red 12px
+    ),
+    repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    red 10px,
+    red 12px
+    );
+}
+
+.day.row1{
+    grid-row:1;
+}
+.day.row2{
+    grid-row:2;
+}
+.day.row3{
+    grid-row:3;
+}
+.day.row4{
+    grid-row:4;
+}
+.day.row5{
+    grid-row:5;
+}
+.day.row6{
+    grid-row:6;
+}
+
+.day.col1{
+    grid-column:1;
+}
+.day.col2{
+    grid-column:2;
+}
+.day.col3{
+    grid-column:3;
+}
+.day.col4{
+    grid-column:4;
+}
+.day.col5{
+    grid-column:5;
+}
+.day.col6{
+    grid-column:6;
+}
+.day.col7{
+    grid-column:7;
+}
