@@ -23,7 +23,7 @@ let generateDays = (calendar, month) => {
         col = i%7 +1;
         day = dayTemplate.cloneNode(true);
         day.querySelector("div").className += ` row${row} col${col} ${row===6?"row-last":""} ${!currDays.includes(i)?"not-curr":""}`
-        day.querySelector("a").textContent = dayIds[i].split("-")[2]
+        day.getElementById("dayNum").textContent = dayIds[i].split("-")[2]
         day.querySelector("div").id = dayIds[i];
 
         calendar.appendChild(day);
