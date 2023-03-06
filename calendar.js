@@ -3,18 +3,20 @@ const calendar = document.getElementById("calendar");
 const now = new Date();
 const numCells = 6*7;
 let populateCalendar = () => {
-    generateDays(calendar,3,31)
+    generateDays(calendar,now.getMonth())
 }
 
-let generateDays = (calendar, offset, days) => {
+let generateDays = (calendar, month) => {
     let day;
     let row;
     let col;
     let currDays = [];
+    let days = new Date(now.getFullYear(), month+1,0).getDate()
+    let offset = new Date(now.getFullYear(), month).getDay()
     for (let i = offset; i < days + offset; i++) {
         currDays.push(i)
     }
-    let dayIds = getMonth(now.getMonth())
+    let dayIds = getMonth(month)
 
     for (let i = 0; i < numCells; i++) {
         row = Math.floor(i/7)+1;
