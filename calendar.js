@@ -2,6 +2,8 @@ const dayTemplate = document.getElementById("day-template").content
 const calendar = document.getElementById("calendar");
 const now = new Date();
 const numCells = 6*7;
+
+const streamDays = [0,3,5]
 let populateCalendar = () => {
     generateDays(calendar,now.getMonth())
 }
@@ -23,6 +25,9 @@ let generateDays = (calendar, month) => {
         col = i%7 +1;
         day = dayTemplate.cloneNode(true);
         day.querySelector("div").className += ` row${row} col${col} ${row===6?"row-last":""} ${!currDays.includes(i)?"not-curr":""}`
+        if(streamDays.includes(i%7)) {
+            day.querySelector("div").className += " stream-day"
+        }
         day.getElementById("dayNum").textContent = dayIds[i].split("-")[2]
         day.querySelector("div").id = dayIds[i];
 

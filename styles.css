@@ -39,6 +39,9 @@ main {
     -webkit-box-sizing: border-box;
     padding:1px 4px;
 }
+.stream-day{
+    background: mediumpurple;
+}
 .day.not-curr{
     background: lightgray;
 }
